@@ -1,13 +1,12 @@
-package med.voll.api.endereco;
+package med.voll.api.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Embeddable//Marca a classe Endereco como uma classe que não terá uma tabela
 // própria, mas seus campos serão mapeados como parte da entidade que a utiliza.
-@Getter
+//@Getter
 //@NoArgsConstructor
 @AllArgsConstructor
 public class Endereco {
@@ -30,6 +29,34 @@ public class Endereco {
         this.cidade = dados.cidade();
         this.numero = dados.numero();
         this.complemento = dados.complemento();
+    }
+
+    public String getUf() {
+        return uf;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
     }
 
     //tratar as exceptions

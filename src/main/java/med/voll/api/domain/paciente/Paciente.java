@@ -1,12 +1,11 @@
-package med.voll.api.paciente;
+package med.voll.api.domain.paciente;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.EqualsAndHashCode;
 import med.voll.api.dto.DadosCadastroPaciente;
-import med.voll.api.endereco.DadosEndereco;
-import med.voll.api.endereco.Endereco;
+import med.voll.api.domain.endereco.Endereco;
 
 @Entity(name = "paciente")
 @Table(name = "pacientes")
@@ -14,7 +13,7 @@ import med.voll.api.endereco.Endereco;
 public class Paciente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)//por algum motivo mistico o .IDENTITY nao funciona tive que optar por .SEQUENCE
     private Long id;
     private String nome;
     private String idade;
